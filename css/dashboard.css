@@ -1,0 +1,283 @@
+@import url("https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Itim&display=swap");
+
+/* Variabel CSS untuk warna dan font */
+:root {
+  --color-bg: #ffffff;
+  --color-primary: #1dadb5;
+  --color-secondary: #3a3d58;
+  --color-muted: #5a5a5a;
+  --color-text: #333;
+  --color-light-bg: #89cad2;
+}
+
+/* Latar Belakang dengan gradasi yang lebih lembut */
+body {
+  background: linear-gradient(var(--color-light-bg), var(--color-bg));
+  /* background: linear-gradient(#1c81e6, #c9daed); */
+  font-family: "Poppins", sans-serif;
+  color: var(--color-text);
+  padding: 0;
+  margin: 0; /* Tambahkan margin nol untuk body */
+}
+
+/* Gaya Heading yang lebih kontras dan minimalis */
+h1,
+h5 {
+  font-weight: bold;
+  font-family: "Itim", cursive;
+  color: var(--color-text);
+  text-align: center;
+  letter-spacing: 1px;
+}
+h1 {
+  font-size: 65px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+
+}
+
+h5 {
+  font-size: 27px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+
+}
+
+/* Card dengan tampilan modern dan bayangan lembut */
+.card {
+  min-height: 100%;
+  background: var(--color-bg);
+  border-radius: 15px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+.card-header {
+  background-color: var(--color-primary);
+  color: #ffffff;
+  border-bottom: none;
+  font-size: 1.2rem;
+  padding: 15px;
+  border-radius: 15px 15px 0 0;
+}
+
+/* Tombol dengan hover yang modern */
+.btn-success {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  height: 50px;
+}
+.btn-success:hover {
+  background-color: #1b949a; /* Warna lebih gelap saat hover */
+  box-shadow: 0 4px 12px rgba(27, 148, 154, 0.3);
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #77e38e, #1ac840);
+  border-color: var(--color-primary);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #1b949a; /* Warna lebih gelap saat hover */
+  box-shadow: 0 4px 12px rgba(27, 148, 154, 0.3);
+}
+.btn-danger {
+  background: linear-gradient(135deg, #ff6666, #ff3333);
+  border-color: var(--color-primary);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-danger:hover {
+  background-color: #1b949a; /* Warna lebih gelap saat hover */
+  box-shadow: 0 4px 12px rgba(27, 148, 154, 0.3);
+}
+
+/* Progress Bar dengan transisi lebih halus */
+.progress {
+  height: 10px;
+  background-color: #e0e0e0;
+  border-radius: 5px;
+  transition: width 0.6s ease;
+}
+
+.progress-bar {
+  background-color: var(--color-primary);
+  transition: width 0.6s ease;
+  border-radius: 5px;
+}
+
+/* Container untuk card penilaian */
+.penilaian-container {
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.penilaian-card {
+  flex: 1;
+  min-width: 280px;
+  min-height: 200px; /* Tinggi minimum agar tidak tumpang tindih */
+  padding: 10px;
+  background: var(--color-bg);
+  border-radius: 15px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.penilaian-card.baik {
+  border-top: 4px solid var(--color-primary);
+}
+
+.penilaian-card.kurang {
+  border-top: 4px solid #e74c3c;
+}
+
+.penilaian-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: var(--color-text);
+}
+
+/* Animasi hover */
+.penilaian-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+/* Item di dalam card penilaian */
+.penilaian-item {
+  margin-bottom: 20px;
+}
+
+.penilaian-item span {
+  display: block;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--color-muted);
+  margin-bottom: 8px;
+}
+
+/* Progress bar style */
+.penilaian-progress-bar {
+  background-color: #e0e0e0;
+  border-radius: 5px;
+  overflow: hidden;
+  height: 10px;
+}
+
+.penilaian-progress-bar-baik .penilaian-progress {
+  background: var(--color-primary);
+  height: 100%;
+  border-radius: 5px;
+  transition: width 0.6s ease;
+}
+
+.penilaian-progress-bar-kurang .penilaian-progress {
+  background: #e74c3c;
+  height: 100%;
+  border-radius: 5px;
+  transition: width 0.6s ease;
+}
+
+/* Navbar dengan warna yang lebih lembut */
+.navbar {
+  background-color: var(--color-secondary);
+  padding: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.navbar-brand:hover {
+  color: #d4d4d4; /* Warna saat hover */
+}
+
+/* Font styling untuk keseluruhan tampilan */
+p,
+span,
+a {
+  font-size: 16px;
+  color: var(--color-muted);
+}
+
+/* Form Select styling */
+select.form-select {
+  background-color: var(--color-bg);
+  border-color: #ced4da;
+  padding: 10px;
+  border-radius: 8px;
+  transition: border-color 0.3s ease;
+}
+
+select.form-select:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 8px rgba(37, 197, 206, 0.2);
+}
+
+/* Animasi hover untuk tombol submit */
+
+button[type="submit"] {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+/* Gaya tambahan untuk teks yang lebih baik */
+.text-muted {
+  color: var(--color-muted);
+}
+
+.text-lg {
+  font-size: 1.25rem;
+}
+
+/* Animasi untuk emoticon */
+.emoticon {
+  transition: transform 0.2s;
+}
+
+.emoticon:hover {
+  transform: scale(1.2);
+}
+
+/* Media Query untuk Responsiveness */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 1.8rem; /* Ukuran lebih kecil di perangkat mobile */
+  }
+
+  .card {
+    margin: 10px; /* Memberikan jarak pada card */
+  }
+
+  .navbar {
+    padding: 10px; /* Mengurangi padding navbar di perangkat mobile */
+  }
+  .penilaian-container {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .penilaian-card {
+    min-width: 100%;
+  }
+
+  .penilaian-card h3 {
+    font-size: 1.3rem;
+  }
+}

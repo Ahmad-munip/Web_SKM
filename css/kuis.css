@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Itim&display=swap');
+
+/* Font dan Latar Belakang */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f8fbff;
+    margin: 0;
+    padding: 0;
+}
+
+/* Judul Form */
+h2 {
+    font-family: "Itim", cursive;
+    color: #333;
+    font-size: 35px;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 40px;
+}
+
+/* Kontainer Form */
+.container {
+    max-width: 560px;
+    background: linear-gradient(135deg, #bdd6f3, #59a2eb);
+    padding: 50px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.5);
+    border-radius: 20px;
+    margin: auto;
+}
+
+.form-label {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* Ikon pada Label Form */
+.form-label i {
+    color: #0060c6;
+    margin-right: 8px;
+    font-size: 1.8rem;
+}
+
+/* Gaya Modal */
+.modal-content {
+    border-radius: 12px;
+    animation: slide-in 0.5s ease;
+}
+
+@keyframes slide-in {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.modal-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #333;
+    text-align: center;
+}
+
+/* Pop-up pertanyaan */
+.modal-body {
+    font-size: 1.8rem;
+    text-align: center; /* Mengatur teks pertanyaan menjadi rata kiri */
+    line-height: 1.6;
+    padding: 20px 30px;
+    color: #444;
+}
+
+/* Judul pertanyaan */
+#questionTitle {
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    color: #007bff;
+    margin-bottom: 20px;
+    font-size: 1.3rem;
+}
+
+/* Gaya input nilai untuk tampilan pilihan sangat buruk hingga sangat baik */
+.nilai-wrapper {
+    display: flex;
+    justify-content: space-between; /* Mengatur jarak antar pilihan */
+    gap: 10px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.nilai-input label {
+    cursor: pointer;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.9rem; /* Mengecilkan font agar teks tidak keluar lingkaran */
+    font-weight: 500;
+    text-align: center; /* Membuat teks berada di tengah */
+    padding: 8px; /* Menambah padding agar teks tidak terlalu menempel */
+    box-sizing: border-box;
+    transition: background-color 0.3s, transform 0.3s;
+    word-wrap: break-word; /* Memastikan teks panjang otomatis wrap */
+}
+
+.nilai-input input[type="radio"] {
+    display: none;
+    
+}
+
+.nilai-input input[type="radio"]:checked + label {
+    background-color: #007bff;
+    color: white;
+    transform: scale(1.1);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.nilai-input label:hover {
+    background-color: #e0e0e0;
+    transform: scale(1.05);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+
+}
+
+/* Tombol */
+.btn-primary {
+    padding: 12px;
+    font-size: 1rem;
+    font-weight: bold;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.15);
+}
+
+.btn-success {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+    font-weight: bold;
+    background-color: #28a745;
+    border: none;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.btn-success:hover {
+    background-color: #218838;
+    transform: translateY(-2px);
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.15);
+}

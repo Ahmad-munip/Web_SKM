@@ -1,0 +1,166 @@
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  background-color: #67a7ef; /* Warna latar belakang */
+}
+
+table {
+  border-radius: 8px;
+  box-shadow: 3px 0 10px rgba(0, 0, 0, 0.5); /* Efek bayangan */
+}
+
+h1 {
+  text-align: center;
+  padding: 20px;
+  padding-bottom: 20px;
+  font-size: 45px;
+  font-family: "Times New Roman", Times, serif;
+  color: #ffffff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+/* Styling tambahan untuk dropdown */
+.navbar {
+  background-color: transparent; /* Warna latar belakang navbar */
+}
+.dropdown-menu {
+  right: 0; /* Dropdown muncul dari kanan */
+  left: auto; /* Menonaktifkan kiri untuk dropdown */
+}
+.profile-pic {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%; /* Membuat gambar profil menjadi bulat */
+  object-fit: cover;
+}
+
+.sidebar {
+  height: 100vh;
+  position: fixed;
+  font-size: 18px;
+  width: 230px;
+  border-top-right-radius: 20px;
+  background: linear-gradient(#1c81e6, #c9daed);
+  color: #ffffff; /* Warna teks sidebar */
+  box-shadow: 3px 0 10px rgba(0, 0, 0, 0.5); /* Efek bayangan */
+  transition: width 0.2s ease; /* Transisi untuk hover */
+}
+.sidebar:hover {
+  width: 260px; /* Memperlebar sidebar saat hover */
+}
+
+h4 {
+  color: #f4f4f9;
+  padding: 20px;
+  text-align: center;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.sidebar .nav-link {
+  color: white;
+  padding: 15px;
+  transition: color 0.2s ease;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.sidebar .nav-link i {
+  margin-right: 10px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.sidebar .nav-link:hover {
+  color: #c9daed;
+}
+
+.sidebar .dropdown-item i {
+  margin-right: 8px;
+}
+
+form.d-flex {
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  justify-content: space-between;
+}
+form .form-select {
+  min-width: 150px;
+}
+
+form button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: 500;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+form .btn-primary {
+  background: linear-gradient(135deg, #67a7ef, #1c81e6);
+  color: white;
+}
+
+form .btn-secondary {
+  background: linear-gradient(135deg, #ff6666, #ff3333);
+  color: white;
+}
+
+form button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+}
+
+form button i {
+  font-size: 18px;
+}
+
+.content {
+  flex: 1;
+  padding: 20px;
+  margin-left: 260px;
+  background: linear-gradient(#1c81e6, #c9daed);
+  border-top-left-radius: 20px; /* Sudut melengkung pada konten */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Efek bayangan pada konten */
+}
+.footer {
+  background: linear-gradient(#4e8fd9, #1771d2);
+  color: white; /* Warna teks footer */
+  padding: 10px;
+  padding: 20px;
+  margin-left: 260px;
+  font-size: 20px;
+  text-align: center;
+  box-shadow: 0 -3px 10px rgba(0, 0, 0, 0.2); /* Efek bayangan pada footer */
+}
+.table th,
+.table td {
+  text-align: center;
+  border: 0px solid #f5faff; /* Warna batas tabel */
+  padding: 12px;
+}
+.table th {
+  /* background: linear-gradient(#007bff, #dbe6f1);  */
+  background-color: #1c81e6;
+  color: white; /* Warna teks header tabel */
+}
+.action-links a {
+  margin: 0 5px; /* Spasi antara tombol aksi */
+}
+
+/* Responsif untuk layar lebih kecil */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 150px; /* Menyempitkan sidebar pada layar kecil */
+  }
+  .content {
+    margin-left: 110px; /* Penyesuaian margin */
+  }
+  .footer {
+    margin-left: 110px;
+  }
+}

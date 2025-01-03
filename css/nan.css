@@ -1,0 +1,172 @@
+/* Variabel CSS untuk warna dan font */
+:root {
+    --color-bg: #ffffff;
+    --color-primary: #25c5ce;
+    --color-secondary: #3a3d58;
+    --color-muted: #6c757d;
+    --color-text: #333;
+    --color-light-bg: #a9f5ff;
+}
+
+/* Latar Belakang dengan gradasi yang lebih lembut */
+body {
+    background: linear-gradient(160158deg#1c81e6, #c9daed);
+    font-family: 'Poppins', sans-serif;
+    color: var(--color-text);
+    margin: 0; /* Tambahkan margin nol untuk body */
+}
+
+/* Gaya Heading yang lebih kontras dan minimalis */
+h1, h5 {
+    font-weight: bold;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+/* Card dengan tampilan modern dan bayangan lembut */
+.card {
+    min-height: 100%;
+    background: var(--color-bg);
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+.card-header {
+    background-color: var(--color-primary);
+    color: #ffffff;
+    border-bottom: none;
+    font-size: 1.2rem;
+    padding: 15px;
+    border-radius: 15px 15px 0 0;
+}
+
+
+/* Tombol dengan hover yang modern */
+.btn-success {
+    background-color: var(--color-primary);
+    border-color: var(--color-primary);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    height: 50px;
+}
+.btn-success:hover{
+    background-color: #1b949a; /* Warna lebih gelap saat hover */
+    box-shadow: 0 4px 12px rgba(27, 148, 154, 0.3);
+}
+
+.btn-primary {
+    background: linear-gradient(135deg,#77e38e, #1ac840);
+    border-color: var(--color-primary);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #1b949a; /* Warna lebih gelap saat hover */
+    box-shadow: 0 4px 12px rgba(27, 148, 154, 0.3);
+}
+.btn-danger {
+    background: linear-gradient(135deg, #ff6666, #ff3333);
+    border-color: var(--color-primary);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-danger:hover {
+    background-color: #1b949a; /* Warna lebih gelap saat hover */
+    box-shadow: 0 4px 12px rgba(27, 148, 154, 0.3);
+}
+
+/* Progress Bar dengan transisi lebih halus */
+.progress {
+    height: 10px;
+    background-color: #e0e0e0;
+    border-radius: 5px;
+    transition: width 0.6s ease;
+}
+
+.progress-bar {
+    background-color: var(--color-primary);
+    transition: width 0.6s ease;
+    border-radius: 5px;
+}
+
+
+/* Font styling untuk keseluruhan tampilan */
+p, span, a {
+    font-size: 16px;
+    color: var(--color-muted);
+}
+
+/* Form Select styling */
+select.form-select {
+    background-color: var(--color-bg);
+    border-color: #ced4da;
+    padding: 10px;
+    border-radius: 8px;
+    transition: border-color 0.3s ease;
+}
+
+select.form-select:focus {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 8px rgba(37, 197, 206, 0.2);
+}
+
+/* Animasi hover untuk tombol submit */
+
+button[type="submit"] {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+
+}
+
+/* Gaya tambahan untuk teks yang lebih baik */
+.text-muted {
+    color: var(--color-muted);
+}
+
+.text-lg {
+    font-size: 1.25rem;
+}
+
+/* Animasi untuk emoticon */
+.emoticon {
+    transition: transform 0.2s;
+}
+
+.emoticon:hover {
+    transform: scale(1.2);
+}
+
+@media (max-width: 768px) {
+    h1 {
+      font-size: 1.8rem; /* Ukuran lebih kecil di perangkat mobile */
+    }
+  
+    .card {
+      margin: 10px; /* Memberikan jarak pada card */
+    }
+  
+    .navbar {
+      padding: 10px; /* Mengurangi padding navbar di perangkat mobile */
+    }
+    .penilaian-container {
+      flex-direction: column;
+      gap: 10px;
+    }
+    .penilaian-card {
+      min-width: 100%;
+    }
+  
+    .penilaian-card h3 {
+      font-size: 1.3rem;
+    }
+  }
