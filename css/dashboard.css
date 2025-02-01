@@ -3,12 +3,13 @@
 /* Variabel CSS untuk warna dan font */
 :root {
   --color-bg: #ffffff;
-  --color-primary: #1dadb5;
+  --color-primary: #25c5ce;
   --color-secondary: #3a3d58;
-  --color-muted: #5a5a5a;
+  --color-muted: #6c757d;
   --color-text: #333;
-  --color-light-bg: #89cad2;
+  --color-light-bg: #a9f5ff;
 }
+
 
 /* Latar Belakang dengan gradasi yang lebih lembut */
 body {

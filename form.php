@@ -13,17 +13,17 @@ if ($conn->connect_error) {
 }
 
 // Fungsi untuk memformat tanggal dalam Bahasa Indonesia
-function formatTanggal($date) {
-    $hariArray = ['Minggu', 'Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu'];
-    $bulanArray = ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'];
+// function formatTanggal($date) {
+//     $hariArray = ['Minggu', 'Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu'];
+//     $bulanArray = ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'];
 
-    $dayOfWeek = date('w', strtotime($date));
-    $day = date('d', strtotime($date));
-    $month = date('n', strtotime($date)) - 1;
-    $year = date('Y', strtotime($date));
+//     $dayOfWeek = date('w', strtotime($date));
+//     $day = date('d', strtotime($date));
+//     $month = date('n', strtotime($date)) - 1;
+//     $year = date('Y', strtotime($date));
 
-    return $hariArray[$dayOfWeek] . ", " . $day . " " . $bulanArray[$month] . " " . $year;
-}
+//     return $hariArray[$dayOfWeek] . ", " . $day . " " . $bulanArray[$month] . " " . $year;
+// }
 
 // Proses input data
 if ($_SERVER["REQUEST_METHOD"] == "POST") {

@@ -3,14 +3,110 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Admin SIIKUAT</title>
-    <link rel="stylesheet" href="css/face.css">
+    <title>Face Registration and Login System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f0f2f5;
+        }
+
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .tab-buttons {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .tab-button {
+            padding: 10px 20px;
+            background-color: #e4e6eb;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .tab-button.active {
+            background-color: #1877f2;
+            color: white;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            margin-bottom: 15px;
+        }
+
+        input {
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        button {
+            padding: 10px;
+            background-color: #1877f2;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #166fe5;
+        }
+
+        .webcam-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        #videoElement, #capturedPhoto {
+            width: 400px;
+            height: 300px;
+            background-color: #ddd;
+            border-radius: 4px;
+        }
+
+        .status-message {
+            padding: 10px;
+            border-radius: 4px;
+            margin-top: 10px;
+            text-align: center;
+        }
+
+        .success {
+            background-color: #d4edda;
+            color: #155724;
+        }
+
+        .error {
+            background-color: #f8d7da;
+            color: #721c24;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
-        <h1>Login Admin SIIKUAT</h1>
-
-        <!-- Tab Buttons -->
+        <h1>Face Registration and Login System</h1>
+        
         <div class="tab-buttons">
             <button class="tab-button active" data-tab="login">Login</button>
             <button class="tab-button" data-tab="register">Register</button>
@@ -20,7 +116,7 @@
         <div id="loginSection">
             <div class="webcam-container">
                 <video id="loginVideo" autoplay></video>
-                <canvas id="loginCanvas"></canvas>
+                <canvas id="loginCanvas" style="display: none;"></canvas>
                 <button id="loginCaptureButton">Capture Photo to Login</button>
             </div>
             <div id="loginStatus" class="status-message"></div>
@@ -32,15 +128,16 @@
                 <label for="username">Username:</label>
                 <input type="text" id="username" required>
             </div>
-
+            
             <div class="webcam-container">
                 <video id="registerVideo" autoplay></video>
-                <canvas id="registerCanvas"></canvas>
+                <canvas id="registerCanvas" style="display: none;"></canvas>
                 <button id="registerCaptureButton">Capture Photo for Registration</button>
             </div>
             <div id="registerStatus" class="status-message"></div>
         </div>
     </div>
+
     <script>
         // Store user data in localStorage
         const users = JSON.parse(localStorage.getItem('users') || '{}');
@@ -123,8 +220,8 @@
             showStatus('Registration successful!', true, 'registerStatus');
         });
 
-         // Login capture button
-         loginCaptureButton.addEventListener('click', () => {
+        // Login capture button
+        loginCaptureButton.addEventListener('click', () => {
             const context = loginCanvas.getContext('2d');
             loginCanvas.width = loginVideo.videoWidth;
             loginCanvas.height = loginVideo.videoHeight;
@@ -135,41 +232,42 @@
             // Simulate face matching (in real app, this would do proper face comparison)
             const userEntries = Object.entries(users);
             if (userEntries.length === 0) {
-                showStatus('No registered users found', false);
+                showStatus('No registered users found', false, 'loginStatus');
                 return;
             }
 
             // Simulate processing delay
-            showStatus('Verifying...', null);
+            showStatus('Verifying...', null, 'loginStatus');
             setTimeout(() => {
                 // Random success for demo (in real app, would do actual face matching)
                 const isMatch = Math.random() > 0.3;
-
+                
                 if (isMatch) {
                     const randomUser = userEntries[Math.floor(Math.random() * userEntries.length)];
-                    showStatus(`Welcome back, ${randomUser[0]}!`, true);
-                    
-                    // Redirect to the next page (for example, dashboard.html)
-                    window.location.href = 'koneksi.php'; 
+                    showStatus(`Welcome back, ${randomUser[0]}!`, true, 'loginStatus');
                 } else {
-                    showStatus('Face not recognized. Please try again.', false);
+                    showStatus('Face not recognized. Please try again.', false, 'loginStatus');
                 }
             }, 1500);
         });
 
         // Show status message
-        function showStatus(message, isSuccess) {
-            loginStatus.textContent = message;
-            loginStatus.className = 'status-message';
+        function showStatus(message, isSuccess, elementId) {
+            const element = document.getElementById(elementId);
+            element.textContent = message;
+            element.className = 'status-message';
             if (isSuccess !== null) {
-                loginStatus.classList.add(isSuccess ? 'success' : 'error');
+                element.classList.add(isSuccess ? 'success' : 'error');
             }
         }
+
         // Cleanup
         window.addEventListener('beforeunload', () => {
-            if (loginVideo.srcObject) {
-                loginVideo.srcObject.getTracks().forEach(track => track.stop());
-            }
+            [loginVideo, registerVideo].forEach(video => {
+                if (video.srcObject) {
+                    video.srcObject.getTracks().forEach(track => track.stop());
+                }
+            });
         });
     </script>
 </body>

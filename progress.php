@@ -1,7 +1,6 @@
 <?php
 require_once('tcpdf/tcpdf.php');
 
-
 $servername = "localhost:3307";
 $username_db = "root"; 
 $password_db = ""; 
@@ -11,20 +10,6 @@ $conn = new mysqli($servername, $username_db, $password_db, $dbname);
 if ($conn->connect_error) {
     die("Koneksi gagal: " . $conn->connect_error);
 }
-
-// Fungsi untuk memformat tanggal dalam Bahasa Indonesia
-function formatTanggal($date) {
-    $hariArray = ['Minggu', 'Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu'];
-    $bulanArray = ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'];
-
-    $dayOfWeek = date('w', strtotime($date)); 
-    $day = date('d', strtotime($date)); 
-    $month = date('n', strtotime($date)) - 1; 
-    $year = date('Y', strtotime($date)); 
-
-    return $hariArray[$dayOfWeek] . ", " . $day . " " . $bulanArray[$month] . " " . $year . " " . date('H:i:s', strtotime($date)); 
-}
-
 
 // Ambil tahun dari input filter
 $selected_year = isset($_GET['year']) ? (int)$_GET['year'] : date('Y');
@@ -213,17 +198,29 @@ while ($row_penilaian = $result_penilaian->fetch_assoc()) {
                 <i class="fas fa-filter"></i> Filter
             </button>
         </div>
-
-        <!-- Tombol Download -->
         <!-- <div class="col-md-2">
-            <button type="button" id="downloadPage" class="btn btn-primary" data-aos="zoom-in">
-                <i class="fas fa-download"></i> Download Page
+            <button type="button" id="openChatbot" class="btn btn-primary" data-aos="zoom-in">
+                <i class="fas fa-comments"></i> Chat with us
             </button>
-        </div> -->
+        </div>  -->
     </div>
 </form>
-</div>
 
+<!-- Chatbot Container -->
+<!-- <div id="chatbotContainer" class="chatbot-container" style="display: none;">
+    <div id="chatbotBox" class="chatbot-box">
+        <div class="chatbot-header">
+            <h5>Chat with AI</h5>
+            <button id="closeChatbot" class="close-btn">&times;</button>
+        </div>
+        <div id="chatMessages" class="chat-messages"></div>
+        <div class="chat-input">
+            <input type="text" id="userMessage" placeholder="Ask something..." />
+            <button id="sendMessage" class="btn btn-primary">Send</button>
+        </div>
+    </div>
+</div> -->
+</div>
 
     <!-- Main Cards -->
     <div class="container">
@@ -393,7 +390,7 @@ while ($row_penilaian = $result_penilaian->fetch_assoc()) {
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-<script>
+<!-- <script>
 document.getElementById('downloadPage').addEventListener('click', function () {
     const pdf = new jspdf.jsPDF('p', 'mm', 'a4');
     html2canvas(document.body).then(canvas => {
@@ -422,7 +419,7 @@ document.getElementById('downloadPage').addEventListener('click', function () {
         pdf.save('dashboard.pdf');
     });
 });
-</script>
+</script> -->
 <script>
     // AOS Animation initialization
     AOS.init();

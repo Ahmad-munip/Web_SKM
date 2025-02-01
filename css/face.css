@@ -1,0 +1,137 @@
+ /* Global Styles */
+ body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #1e1e1e, #222);
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    background: #2b2b2b;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    max-width: 900px;
+    width: 100%;
+    text-align: center;
+}
+
+h1 {
+    color: #fff;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+/* Tab Button Styles */
+.tab-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.tab-button {
+    padding: 12px 25px;
+    background-color: #444;
+    border: 2px solid #555;
+    border-radius: 5px;
+    color: #bbb;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.tab-button.active {
+    background-color: #f58c42;
+    color: white;
+    border-color: #f58c42;
+}
+
+.tab-button:hover {
+    background-color: #555;
+}
+
+/* Form Group Styles */
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.form-group label {
+    color: #aaa;
+    font-size: 1em;
+    margin-bottom: 8px;
+    display: block;
+}
+
+input {
+    padding: 12px;
+    width: 100%;
+    background-color: #333;
+    border: 1px solid #444;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 1em;
+}
+
+input:focus {
+    outline: none;
+    border-color: #f58c42;
+}
+
+button {
+    padding: 12px 20px;
+    background-color: #f58c42;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.2em;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #f68d3c;
+}
+
+/* Webcam Section Styles */
+.webcam-container {
+    margin: 30px 0;
+    position: relative;
+}
+
+video, canvas {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+#loginCanvas, #registerCanvas {
+    display: none;
+}
+
+.status-message {
+    margin-top: 15px;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 1.1em;
+    color: white;
+    display: inline-block;
+}
+
+.success {
+    background-color: #28a745;
+}
+
+.error {
+    background-color: #dc3545;
+}
+
+.hidden {
+    display: none;
+}

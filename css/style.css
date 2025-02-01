@@ -38,7 +38,8 @@ h1 {
     font-size: 18px;
     width: 230px;    
     border-top-right-radius: 20px;
-    background: linear-gradient(to left, #0c6ed0, #397cbc);
+    /* background: linear-gradient(to left, #0c6ed0, #397cbc); */
+    background: linear-gradient(#1c81e6, #c9daed);
     color: #ffffff; /* Warna teks sidebar */
     box-shadow: 3px 0 10px rgba(0, 0, 0, 0.5); /* Efek bayangan */
     transition: width 0.2s ease; /* Transisi untuk hover */
@@ -124,13 +125,13 @@ form button i {
     flex: 1;
     padding: 20px;
     margin-left: 260px;
-    background: linear-gradient(270deg, #845ec2, #2c73d2);
+    background: linear-gradient(#1c81e6, #c9daed);
     border-top-left-radius: 20px;/* Sudut melengkung pada konten */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Efek bayangan pada konten */
 
 }
 .footer {
-    background: linear-gradient(270deg, #3f86e3, #297ae5);
+    background: linear-gradient(#4e8fd9, #1771d2);
     padding: 10px;
     padding: 20px;
     margin-left: 260px;
@@ -154,8 +155,8 @@ table {
 }
 
 .table th {
-    /* background: linear-gradient(#002c5b, #000000);  */
-    background: linear-gradient(#2c73d2, #5b74c5);
+    background-color: #1c81e6;
+    /* background: linear-gradient(#2c73d2, #5b74c5); */
     color: white; /* Warna teks header tabel */
     text-align: center;
     border: 0px solid #000000; /* Warna batas tabel */
